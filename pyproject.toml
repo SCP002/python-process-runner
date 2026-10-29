@@ -1,0 +1,20 @@
+[project]
+name = "python-process-runner"
+version = "0.1.0"
+description = "Python process runner utility for Windows with pseudoterminal support"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pexpect",
+    "pywinpty",
+]
+
+[dependency-groups]
+dev = [
+    "mypy",
+    "ruff",
+    "types-pexpect",
+]
+
+[tool.mypy]
+follow_untyped_imports = true

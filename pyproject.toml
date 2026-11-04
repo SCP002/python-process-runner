@@ -3,7 +3,7 @@ name = "python-process-runner"
 version = "0.1.0"
 description = "Python process runner utility for Windows with pseudoterminal support"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.14"
 dependencies = [
     "pexpect",
     "pywinpty",

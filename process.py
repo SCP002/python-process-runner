@@ -148,7 +148,8 @@ def _win_pty_start_process(
     import winpty
 
     command = shutil.which(command) or command
-    cmdline = subprocess.list2cmdline([command] + args)
+    # PTY.spawn() prepends appname to cmdline itself
+    cmdline = " " + subprocess.list2cmdline(args) if args else None
     # Unlike os.get_terminal_size(), it falls back to a default size if stdout is not a terminal
     term_size = shutil.get_terminal_size()
     pty = winpty.PTY(term_size.columns, term_size.lines, backend=winpty.Backend.WinPTY)
